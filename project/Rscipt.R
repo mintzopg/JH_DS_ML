@@ -54,6 +54,11 @@ myValidation <- training[-inTrain, ]
 preProc <- preProcess(myTraining[, -53], method = "pca")
 preProc
 
-# ...must do sam tranformation for Validation and testing sets and apply the machine learning algorithm
+# ...must do same tranformation for Validation and testing sets and apply the machine learning algorithm
+
+myTrainPC <- predict(preProc, myTraining[, -53]) # calculate PC for training data set
+myValidationPC <- predict(preProc, myTraining[, -53]) # calculate PC for validation data set 
+
+#### Train model #####
 
 
